@@ -1,7 +1,4 @@
-select category.name , SUM(product.amount) as total_amount
-from product
-join category on product.category_id = category.id
-group by category.name
-order by total_amount 
-
-
+select courses.course_Id, courses.course_name, courses.description, enrollments.student_name, enrollments.enrollment_date
+from courses
+left join enrollments
+on courses.course_id = enrollments.course_id
